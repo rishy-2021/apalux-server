@@ -22,8 +22,8 @@ export const sendingMail = async ({ from, to, subject, text }: MailOptions): Pro
     const transporter: Transporter = nodemailer.createTransport({
       service:'gmail',
       auth: {
-        user:"riteshpuwar2001@gmail.com",
-        pass: "zbipfwowoixnctkr"
+        user:process.env.USER,
+        pass: process.env.PASSWORD
       },
     });
 
