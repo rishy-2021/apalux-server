@@ -2,11 +2,9 @@
   "name": "apalux-server",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
-    "build": "npx tsc",
-    "start": "node dist/index.js",
-    "dev": "nodemon src/index.ts"
+    "start": "ts-node index.ts"
   },
   "author": "",
   "license": "ISC",
