@@ -91,6 +91,23 @@ export const updateAdminUser = async (req: Request, res: Response) => {
   }
 };
 
+export const deleteDashUser = async (req, res, next) => {
+  try {
+    const userId = req.params.id;
+
+    const deletedUser = await DashUser.findByIdAndDelete(userId);
+
+    if (!deletedUser) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+    return res.json({ message: 'deleted successfully' });
+
+  } catch (error) {
+    console.error('Error deleting user:', error);
+    return res.status(500).json({ error: 'Internal Server Error' });
+  }
+};
+
 export const updateDashboardUser = async (req: Request, res: Response) => {
     try {
         const { id } = req.params;

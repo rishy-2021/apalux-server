@@ -1,7 +1,7 @@
 import express from "express";
 import { login, signup, verifyEmail } from "../controller/auth-controller";
 import saveUser from "../middleware/user-auth"
-import { addDashBoardUser, getAdminUser, getDashboardUsers, updateAdminUser } from "../controller/user-controller";
+import { addDashBoardUser, deleteDashUser, getAdminUser, getDashboardUsers, updateAdminUser } from "../controller/user-controller";
 
 const router = express.Router();
 
@@ -15,7 +15,9 @@ router.post("/signin", login)
 
 router.get('/getadminuser', getAdminUser)
 
-router.patch('/updateadminuser/:id', updateAdminUser)
+router.patch('/adminuser/:id', updateAdminUser)
+
+router.delete('/deleteuser/:id', deleteDashUser)
 
 router.get('/getdashboardusers', getDashboardUsers)
 
