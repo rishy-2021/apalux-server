@@ -1,11 +1,11 @@
 import express from "express";
-import authRouter from"./auth-route"
-import userRouter from"./user-route"
+import authRouter from "./auth-route"
+import userRouter from "./user-route"
 const router = express.Router();
 
 router.get("/", (req, res) => {
-    res.send("Welcome to stack overflow clone");
-  });
+  res.send("Welcome to stack overflow clone");
+});
 
 router.use('/auth', authRouter);
 router.use("/", userRouter);

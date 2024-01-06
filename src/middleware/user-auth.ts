@@ -3,7 +3,7 @@ import User from "../models/user-model";
 
 const saveUser = async (req: Request, res: Response, next: NextFunction) => {
   try {
-     const emailCheck = await User.findOne({email: req.body.email});
+    const emailCheck = await User.findOne({ email: req.body.email });
 
     if (emailCheck) {
       return res.status(409).send("Email already taken");

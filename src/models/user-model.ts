@@ -30,14 +30,14 @@ const UserSchema = new mongoose.Schema({
     type: Boolean,
     defaultValue: false
   },
-  name:{
-    type:String
+  name: {
+    type: String
   },
-  designation:{
-    type:String
+  designation: {
+    type: String
   },
-  address:{
-    type:Object,
+  address: {
+    type: Object,
     default: {}
   }
 });
