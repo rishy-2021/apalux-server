@@ -15,7 +15,7 @@ router.post("/signin", login)
 
 router.get('/getadminuser', getAdminUser)
 
-router.patch('/adminuser/:id', updateAdminUser)
+router.patch('/updateadminuser/:id', updateAdminUser)
 
 router.delete('/deleteuser/:id', deleteDashUser)
 

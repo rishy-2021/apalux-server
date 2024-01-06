@@ -35,16 +35,16 @@ export const signup = async (req: Request, res: Response) => {
         });
 
       } else {
-        return res.status(400).send("Token not created");
+        return res.status(400).send({message:"Token not created"});
       }
 
-      return res.status(201).send(user);
+      return res.status(201).send({message: 'Verification link is sent to your email account!! '});
     } else {
-      return res.status(409).send("Details are not correct");
+      return res.status(409).send({message:"Details are not correct"});
     }
   } catch (error) {
     console.error(error);
-    res.status(500).send("Internal Server Error");
+    res.status(500).send({message:"Internal Server Error"});
   }
 };
 
