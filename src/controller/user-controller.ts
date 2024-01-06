@@ -20,7 +20,6 @@ export const getAdminUser = async (req: Request, res: Response) => {
         } else {
           const user = await User.findOne({ _id: id });
           if (!user) {
-            console.log(user);
             return res.status(401).send({
               msg: "We were unable to find a user. Please try again!",
             });
@@ -115,7 +114,6 @@ export const updateDashboardUser = async (req: Request, res: Response) => {
 
           const user = await User.findOne({ _id: id });
           if (!user) {
-            console.log(user);
             return res.status(401).send({
               msg: "We were unable to find a user. Please try again!",
             });

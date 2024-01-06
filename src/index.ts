@@ -2,7 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import cors from "cors";
-import authRoutes from "./routes/auth-route"
+import router from "./routes"
 import bodyParser from "body-parser"
 
 dotenv.config();
@@ -19,7 +19,7 @@ app.use((req, res, next) => {
   res.header("Access-Control-Allow-Headers", "*");
   next();
 });
-app.use("/", authRoutes);
+app.use("/", router);
 
 mongoose.connect(`${process.env.MONGO_URI}`);
 

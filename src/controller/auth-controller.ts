@@ -50,8 +50,6 @@ export const signup = async (req: Request, res: Response) => {
 
 export const verifyEmail = async (req: Request, res: Response) => {
   try {
-    console.log("---request recieved");
-
     const {token, id} = req.params;
     const usertoken = await Token.findOne({
         token,
@@ -97,8 +95,6 @@ export const verifyEmail = async (req: Request, res: Response) => {
 export const login = async (req: Request, res: Response) => {
   try {
     const { email, password } = req.body;
-    console.log(req.body);
-
     const user = await User.findOne({ email });
 
     if (user) {
@@ -116,7 +112,6 @@ export const login = async (req: Request, res: Response) => {
           return res.status(401).send("User not verified");
         }
       } else {
-        console.log(isSame);
         return res.status(401).send("Authentication failed");
       }
     } else {
