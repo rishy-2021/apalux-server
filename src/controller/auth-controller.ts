@@ -31,7 +31,7 @@ export const signup = async (req: Request, res: Response) => {
           subject: "Account Verification Link",
           text: `Hello, please click to verify your email,
         Please verify your email by clicking this link :
-        https://jade-clafoutis-4ff750.netlify.app/verify-email/${user._id}/${setToken.token} `,
+        ${process.env.CLIENT_API}/verify-email/${user._id}/${setToken.token} `,
         });
 
       } else {
@@ -113,8 +113,6 @@ export const login = async (req: Request, res: Response) => {
 
           return res.status(201).send({accessToken: token, user:user});
         } else {
-          console.log("user verified not");
-
           return res.status(401).send("User not verified");
         }
       } else {

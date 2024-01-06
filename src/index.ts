@@ -19,7 +19,7 @@ app.use((req, res, next) => {
   res.header("Access-Control-Allow-Headers", "*");
   next();
 });
-app.use("/auth", authRoutes);
+app.use("/", authRoutes);
 
 mongoose.connect(`${process.env.MONGO_URI}`);
 
