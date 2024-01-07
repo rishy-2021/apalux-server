@@ -4,7 +4,7 @@ import userRouter from "./user-route"
 const router = express.Router();
 
 router.get("/", (req, res) => {
-  res.send("Welcome to stack overflow clone");
+  res.send("Welcome to apalux assignment project");
 });
 
 router.use('/auth', authRouter);
